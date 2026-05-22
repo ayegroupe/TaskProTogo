@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, ArrowRight, Shield, Clock, Star, Sparkles, Zap, Wrench, Flower2, Truck, Paintbrush, Hammer, Monitor, Baby, Package } from 'lucide-react';
+import { Search, ArrowRight, Shield, Clock, Star, Sparkles, Zap, Wrench, Flower2, Truck, Paintbrush, Hammer, Monitor, Plus, Package } from 'lucide-react';
 
 const CATEGORIES = [
   { name: 'Nettoyage', icon: Sparkles, slug: 'nettoyage' },
@@ -11,7 +11,7 @@ const CATEGORIES = [
   { name: 'Peinture', icon: Paintbrush, slug: 'peinture' },
   { name: 'Maçonnerie', icon: Hammer, slug: 'maconnerie' },
   { name: 'Informatique', icon: Monitor, slug: 'informatique' },
-  { name: 'Garde enfants', icon: Baby, slug: 'garde-enfants' },
+  { name: 'Autres', icon: Plus, slug: 'autres' },
   { name: 'Livraison', icon: Package, slug: 'livraison' },
 ];
 
@@ -101,7 +101,7 @@ export default function Home() {
             {CATEGORIES.map((category) => {
               const Icon = category.icon;
               return (
-                <Link key={category.slug} href={`/services/${category.slug}`} className="group relative bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-emerald-200 overflow-hidden flex flex-col items-center text-center gap-4">
+                <Link key={category.slug} href={`/client/tasks/new?category=${category.slug}`} className="group relative bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-emerald-200 overflow-hidden flex flex-col items-center text-center gap-4">
                   <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/0 to-emerald-50/0 group-hover:from-emerald-50/50 group-hover:to-emerald-100/50 transition-colors z-0"></div>
                   <div className="relative z-10 w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform group-hover:bg-white group-hover:shadow-sm">
                     <Icon className="w-7 h-7" />

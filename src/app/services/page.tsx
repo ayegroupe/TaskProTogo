@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, Zap, Wrench, Flower2, Truck, Paintbrush, Hammer, Monitor, Baby, Package, ArrowRight } from 'lucide-react';
+import { Sparkles, Zap, Wrench, Flower2, Truck, Paintbrush, Hammer, Monitor, Plus, Package, ArrowRight } from 'lucide-react';
 
 const CATEGORIES = [
   { name: 'Nettoyage', icon: Sparkles, slug: 'nettoyage', desc: "Ménage à domicile, bureaux, et nettoyage après travaux." },
@@ -10,7 +10,7 @@ const CATEGORIES = [
   { name: 'Peinture', icon: Paintbrush, slug: 'peinture', desc: "Peinture intérieure et extérieure, finitions." },
   { name: 'Maçonnerie', icon: Hammer, slug: 'maconnerie', desc: "Petits travaux de construction et réparations." },
   { name: 'Informatique', icon: Monitor, slug: 'informatique', desc: "Dépannage PC, installation de réseaux." },
-  { name: 'Garde enfants', icon: Baby, slug: 'garde-enfants', desc: "Baby-sitting et aide aux devoirs." },
+  { name: 'Autres', icon: Plus, slug: 'autres', desc: "Besoin d'un autre service ? Décrivez-le nous." },
   { name: 'Livraison', icon: Package, slug: 'livraison', desc: "Courses et coursiers express à Lomé." },
 ];
 
@@ -31,14 +31,14 @@ export default function ServicesPage() {
           {CATEGORIES.map((category) => {
             const Icon = category.icon;
             return (
-              <Link key={category.slug} href={`/taskers`} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-emerald-200 transition-all group flex flex-col items-start text-left">
+              <Link key={category.slug} href={`/client/tasks/new?category=${category.slug}`} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-emerald-200 transition-all group flex flex-col items-start text-left">
                 <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{category.name}</h3>
                 <p className="text-gray-500 mb-6 flex-1">{category.desc}</p>
                 <div className="flex items-center text-emerald-600 font-bold gap-2 group-hover:translate-x-2 transition-transform">
-                  Trouver un artisan <ArrowRight className="w-4 h-4" />
+                  Publier une demande <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>
             );

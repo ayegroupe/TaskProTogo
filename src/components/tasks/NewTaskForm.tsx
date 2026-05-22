@@ -4,15 +4,24 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { ArrowRight, ArrowLeft, Check, Sparkles, MapPin, Wallet } from 'lucide-react'
 
-export function NewTaskForm({ categories, userId }: { categories: any[], userId: string }) {
+export function NewTaskForm({ categories, userId, initialCategorySlug }: { categories: any[], userId: string, initialCategorySlug?: string }) {
   const router = useRouter()
   const supabase = createClient()
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
+  const getCategoryIdFromSlug = () => {
+    if (!initialCategorySlug) return '';
+    const cat = categories.find(c => {
+       const catSlug = c.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
+       return catSlug === initialCategorySlug;
+    });
+    return cat ? cat.id : '';
+  }
+
   const [formData, setFormData] = useState({
-    category_id: '',
+    category_id: getCategoryIdFromSlug(),
     title: '',
     description: '',
     location_neighborhood: '',

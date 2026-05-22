@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,11 +7,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <Link href="/" className="flex items-center gap-2 mb-4">
-            <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">ayeJOB</span>
+            <Image src="/logo-transparent.png" alt="ayeJOB Logo" width={140} height={45} className="object-contain" />
           </Link>
-          <p className="text-gray-600 text-sm">
-            La première marketplace de services à domicile au Togo. Trouvez les meilleurs artisans pour tous vos besoins.
-          </p>
         </div>
         <div>
           <h4 className="font-semibold text-gray-900 mb-4">Clients</h4>
@@ -37,7 +35,14 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+      <div className="container mx-auto px-4 mt-8">
+        <div className="marquee-container bg-emerald-50 rounded-full py-3">
+          <p className="text-emerald-800 text-lg font-medium marquee-text">
+            🚀 La première marketplace de services à domicile au Togo. Trouvez les meilleurs artisans pour tous vos besoins. Paiement sécurisé et satisfaction garantie !
+          </p>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
         &copy; {new Date().getFullYear()} ayeJOB Togo. Tous droits réservés.
       </div>
     </footer>

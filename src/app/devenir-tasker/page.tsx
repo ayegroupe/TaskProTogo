@@ -23,32 +23,32 @@ export default function DevenirArtisanPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-gray-50 p-8 rounded-3xl text-center">
-            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-gray-50 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-blue-100">
+            <div className="w-16 h-16 bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 rounded-full flex items-center justify-center mx-auto mb-6">
               <TrendingUp className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Plus de revenus</h3>
             <p className="text-gray-600">Accédez à des centaines de demandes de clients chaque semaine dans votre ville.</p>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-3xl text-center">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-gray-50 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-emerald-100">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 rounded-full flex items-center justify-center mx-auto mb-6">
               <ShieldCheck className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Zéro impayé</h3>
             <p className="text-gray-600">Le client paie d'avance. Nous sécurisons l'argent et vous garantissons le paiement à la fin.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-3xl text-center">
-            <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-gray-50 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-purple-100">
+            <div className="w-16 h-16 bg-purple-100 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300 rounded-full flex items-center justify-center mx-auto mb-6">
               <Clock className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Flexibilité totale</h3>
             <p className="text-gray-600">Vous décidez quand vous travaillez, où vous travaillez, et à quel prix.</p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-3xl text-center">
-            <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-gray-50 p-8 rounded-3xl text-center group hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-amber-100">
+            <div className="w-16 h-16 bg-amber-100 text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300 rounded-full flex items-center justify-center mx-auto mb-6">
               <Briefcase className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Outils pros</h3>

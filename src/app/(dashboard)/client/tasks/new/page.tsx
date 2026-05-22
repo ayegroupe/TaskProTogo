@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 import { NewTaskForm } from '@/components/tasks/NewTaskForm';
 
-export default async function NewTaskPage() {
+export default async function NewTaskPage({ searchParams }: { searchParams: { category?: string } }) {
   const supabase = await createClient();
   
   const { data: { user } } = await supabase.auth.getUser();
@@ -25,7 +25,7 @@ export default async function NewTaskPage() {
           <p className="text-gray-600 mt-2">Décrivez votre besoin en détail pour recevoir les meilleures offres de nos artisans qualifiés.</p>
         </div>
 
-        <NewTaskForm categories={categories || []} userId={user.id} />
+        <NewTaskForm categories={categories || []} userId={user.id} initialCategorySlug={searchParams.category} />
       </div>
     </div>
   );

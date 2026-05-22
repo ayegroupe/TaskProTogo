@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, User, LayoutDashboard } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import { NotificationBell } from './NotificationBell';
@@ -17,7 +18,7 @@ export default async function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">ayeJOB</span>
+          <Image src="/logo-transparent.png" alt="ayeJOB Logo" width={140} height={45} className="object-contain" priority />
         </Link>
         <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
           <Link href="/taskers" className="hover:text-emerald-600 transition">Trouver un artisan</Link>
