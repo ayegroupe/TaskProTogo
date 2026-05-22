@@ -1,10 +1,21 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, User } from 'lucide-react'
+import { Menu, X, User, LogOut } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
 
 export function MobileMenu({ user }: { user: any }) {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const supabase = createClient()
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    setIsOpen(false)
+    router.push('/')
+    router.refresh()
+  }
 
   return (
     <div className="md:hidden flex items-center">
@@ -21,14 +32,20 @@ export function MobileMenu({ user }: { user: any }) {
           <Link href="/services" onClick={() => setIsOpen(false)} className="text-gray-800 font-bold hover:text-emerald-600 py-2 border-b border-gray-50">Services</Link>
           <Link href="/devenir-tasker" onClick={() => setIsOpen(false)} className="text-gray-800 font-bold hover:text-emerald-600 py-2 border-b border-gray-50">Devenir Artisan</Link>
           
-          {!user && (
-            <div className="flex flex-col gap-3 pt-4">
+          {!user ? (
+            <div className="flex flex-col gap-3 pt-4 border-t border-gray-100">
               <Link href="/login" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-gray-200 hover:border-emerald-600 hover:text-emerald-600 transition font-bold">
                 <User className="w-5 h-5" /> Connexion
               </Link>
               <Link href="/register" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-sm font-bold">
                 S'inscrire
               </Link>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3 pt-4 border-t border-gray-100">
+              <button onClick={handleLogout} className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition font-bold w-full">
+                <LogOut className="w-5 h-5" /> Déconnexion
+              </button>
             </div>
           )}
         </div>

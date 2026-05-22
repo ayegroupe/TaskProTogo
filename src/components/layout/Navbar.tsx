@@ -36,7 +36,9 @@ export default async function Navbar() {
                 <LayoutDashboard className="w-4 h-4" />
                 <span className="hidden sm:inline">Mon Espace</span>
               </Link>
-              <LogoutButton />
+              <div className="hidden md:block">
+                <LogoutButton />
+              </div>
             </>
           ) : (
             <>
