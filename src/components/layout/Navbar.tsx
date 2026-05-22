@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, User, LayoutDashboard } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
+import { MobileMenu } from './MobileMenu';
 import { NotificationBell } from './NotificationBell';
 import { LogoutButton } from '../auth/LogoutButton';
 
@@ -26,9 +27,7 @@ export default async function Navbar() {
           <Link href="/devenir-tasker" className="hover:text-emerald-600 transition">Devenir Artisan</Link>
         </div>
         <div className="flex items-center gap-4">
-          <button className="p-2 text-gray-600 hover:text-emerald-600 md:hidden">
-            <Menu className="w-5 h-5" />
-          </button>
+          <MobileMenu user={user} />
           
           {user ? (
             <>
