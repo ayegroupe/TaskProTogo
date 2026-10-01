@@ -43,7 +43,19 @@ export default function Footer() {
         </div>
       </div>
       <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} ayeJOB Togo. Tous droits réservés.
+        <p>&copy; {new Date().getFullYear()} ayeJOB Togo. Tous droits réservés.</p>
+        <p className="mt-1">
+          Un produit édité par{' '}
+          <a
+            href="https://ayegroupe.com"
+            target="_blank"
+            rel="noopener"
+            className="underline hover:text-gray-700"
+          >
+            AYEGROUPE
+          </a>{' '}
+          — ingénierie logicielle, négoce et logistique.
+        </p>
       </div>
     </footer>
   );
